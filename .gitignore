@@ -1,0 +1,82 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+.eggs/
+dist/
+build/
+develop-eggs/
+parts/
+wheels/
+*.egg-info/
+sdist/
+*.tox
+*.mo
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+pip-session.txt
+*.sh
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+*.log
+nosetests.xml
+coverage.xml
+*.prof
+
+# Translations
+*.pot
+
+# Django stuff:
+*.db
+*.sqlite3
+*/settings/local.py
+*/local_settings.py
+
+# Flask stuff:
+instance/
+*.db
+
+# Scrapy stuff:
+.scrapy
+
+# Sphinx stuff:
+docs/_build/
+
+# Pylint messages:
+pylint.d
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# mypy
+.mypy_cache/
+mypy-report/
+
+# Environments
+.venv/
+env/
+venv/
+ENV/
+
+# Spyder project settings:
+.spyderproject
+.spyproject
+
+# Rope project data:
+.ropeproject
+
+# VS Code
+.vscode/
+
+# PyCharm
+.idea/
+
+# Temporary files
+*~
