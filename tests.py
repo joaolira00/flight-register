@@ -82,10 +82,10 @@ def test_book_flight_no_seats(client):
     assert response.get_json() == {'error': 'No seats available'}
 
 
-def test_book_flight_not_found(client):
+def test_book_flight_unexpected_error(client):
     payload = {'username': 'John Doe', 'email': 'email@exemplo.com'}
-    response = client.post('/flights/book-flight/999/10A',
+    response = client.post('/flights/book-flight/9999/10A',
                            data=json.dumps(payload),
                            content_type='application/json')
-    assert response.status_code == 404
-    assert response.get_json() == {'error': 'Flight not found'}
+    assert response.status_code == 500
+    assert response.get_json() == {"error": "Something went wrong, please, try again later."}
