@@ -70,7 +70,7 @@ def book_flight(identifier, seat):
         flight.passenger.append(Passenger(username, email))
         return jsonify({"message": "Flight booked successfully"}), 201
 
-    return jsonify({"error": "Flight not found"}), 404
+    return jsonify({"error": "Something went wrong, please, try again later."}), 500
 
 
 if __name__ == '__main__':
