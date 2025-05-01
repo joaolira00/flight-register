@@ -1,0 +1,78 @@
+swagger: "2.0"
+info:
+  title: Flight Booking API
+  description: API para busca e reserva de voos
+  version: "1.0"
+
+host: "127.0.0.1:5000"
+basePath: "/"
+schemes:
+  - http
+
+paths:
+  /flights/get-flight/{identifier}:
+    get:
+      summary: Buscar voo pelo identificador
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          type: integer
+      responses:
+        200:
+          description: Voo encontrado
+        404:
+          description: Voo não encontrado
+
+  /flights/search-flights/{departure}/{destination}:
+    get:
+      summary: Buscar voos por origem e destino
+      parameters:
+        - name: departure
+          in: path
+          required: true
+          type: string
+        - name: destination
+          in: path
+          required: true
+          type: string
+      responses:
+        200:
+          description: Voos disponíveis encontrados
+        404:
+          description: Nenhum voo disponível
+
+  /flights/book-flight/{identifier}/{seat}:
+    post:
+      summary: Reservar um assento em um voo
+      parameters:
+        - name: identifier
+          in: path
+          required: true
+          type: integer
+        - name: seat
+          in: path
+          required: true
+          type: string
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            required:
+              - username
+              - email
+            properties:
+              username:
+                type: string
+              email:
+                type: string
+      responses:
+        201:
+          description: Reserva efetuada com sucesso
+        400:
+          description: Erro na requisição (assento indisponível ou dados ausentes)
+        404:
+          description: Voo não encontrado
+
+definitions: {}
